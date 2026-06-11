@@ -323,49 +323,28 @@ async function submitLead(formType, rawData, options = {}) {
     let pipedreamSuccess = false;
     let pipedreamError = null;
 
-    // Send Telegram notification via Pipedream
+    // Send lead payload to Pipedream webhook (handles Telegram & email notifications)
     try {
-      const response1 = await fetch("https://eothguiuw8eqpfu.m.pipedream.net", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ ...leadPayload, clientLeadId: leadId })
-      });
-      if (response1.ok) {
-        pipedreamSuccess = true;
-      }
-    } catch (telegramError) {
-      console.error("Telegram notification failed:", telegramError);
-      pipedreamError = telegramError;
-    }
-
-    // Send lead to Pipedream webhook
-    try {
-      const response2 = await fetch("https://eothguiuw8eqpfu.m.pipedream.net", {
+      const response = await fetch("https://eothguiuw8eqpfu.m.pipedream.net", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          ...leadPayload,
           leadId: leadId,
-          type: formType,
-          studentName: leadPayload.studentName,
-          parentName: leadPayload.parentName,
-          phone: leadPayload.phone,
-          email: leadPayload.email,
-          sourcePage: leadPayload.sourcePage
+          clientLeadId: leadId
         })
       });
-      if (response2.ok) {
+      if (response.ok) {
         pipedreamSuccess = true;
+        console.log("Pipedream webhook sent successfully");
+      } else {
+        throw new Error(`Pipedream returned status ${response.status}`);
       }
-      console.log("Pipedream webhook sent successfully");
     } catch (webhookError) {
       console.error("Pipedream webhook failed:", webhookError);
-      if (!pipedreamError) {
-        pipedreamError = webhookError;
-      }
+      pipedreamError = webhookError;
     }
 
     // Treat submission as successful if Firestore succeeded OR Pipedream webhook succeeded
