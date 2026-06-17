@@ -735,6 +735,41 @@ article:hover {
 .sticky-cta-strip .strip-cta:hover { background: var(--fg-gold-light); transform: scale(1.04); }
 .sticky-cta-strip .whatsapp-strip-btn { background: #25d366; color: #ffffff; gap: 6px; }
 .sticky-cta-strip .whatsapp-strip-btn:hover { background: #1ebe5c; color: #ffffff; transform: scale(1.04); }
+.sticky-cta-strip .strip-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: background 0.2s, transform 0.2s;
+  box-sizing: border-box;
+}
+.sticky-cta-strip .strip-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+.sticky-cta-strip .strip-icon-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.sticky-cta-strip .strip-icon-btn.messenger:hover { background: #0084FF; }
+.sticky-cta-strip .strip-icon-btn.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.sticky-cta-strip .strip-icon-btn.telegram:hover { background: #0088cc; }
+.sticky-cta-strip .strip-icon-btn.email:hover { background: #ea4335; }
+@media (max-width: 480px) {
+  .sticky-cta-strip .strip-icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .sticky-cta-strip .strip-icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
 .sticky-cta-strip .strip-close {
   background: transparent;
   color: rgba(255,255,255,.45);
@@ -892,10 +927,17 @@ article:hover {
     padding: 24px 18px !important;
   }
 
-  /* FOOTER GRID — ensure single column stacking */
+  /* FOOTER GRID — 2-column grid layout for mobile view */
   .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px 20px !important;
+  }
+  .footer-brand {
+    grid-column: span 2 !important;
+  }
+  .footer-grid .footer-col:last-child {
+    grid-column: span 2 !important;
   }
 
   /* PRICING CARD — reduce padding on tablets */
@@ -1010,4 +1052,76 @@ article:hover {
   .countdown-unit .num {
     font-size: .9rem !important;
   }
+
+  /* Optimise outcomes table container for mobile view (ref-style-iw66yl) */
+  .ref-style-iw66yl {
+    overflow-x: visible !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  .ref-table-white-88, 
+  .ref-table-white-88 tbody, 
+  .ref-table-white-88 tr, 
+  .ref-table-white-88 td {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ref-table-white-88 thead {
+    display: none !important;
+  }
+  .ref-table-white-88 tr {
+    margin-bottom: 16px !important;
+    border: 1px solid var(--gray-100) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 16px !important;
+    background: var(--white) !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+  .ref-table-white-88 tr:last-of-type {
+    margin-bottom: 0 !important;
+  }
+  .ref-table-white-88 td {
+    padding: 6px 0 !important;
+    border: none !important;
+    text-align: left !important;
+  }
+  .ref-table-white-88 .ref-td-label {
+    font-family: 'Sora', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: var(--blue-900) !important;
+    border-bottom: 1px solid var(--gray-100) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .ref-table-white-88 .ref-td-gray::before {
+    content: "Before: " !important;
+    font-weight: 700 !important;
+    color: var(--gray-500) !important;
+    display: inline-block !important;
+    margin-right: 4px !important;
+  }
+  .ref-table-white-88 .ref-td-green-700::before {
+    content: "After: " !important;
+    font-weight: 700 !important;
+    color: var(--green-500) !important;
+    display: inline-block !important;
+    margin-right: 4px !important;
+  }
+  .ref-table-white-88 .ref-td-gray {
+    color: var(--gray-500) !important;
+    font-size: 0.85rem !important;
+  }
+  .ref-table-white-88 .ref-td-green-700 {
+    color: var(--blue-900) !important;
+    font-size: 0.9rem !important;
+    background: rgba(16, 185, 129, 0.08) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 8px 12px !important;
+    margin-top: 4px !important;
+    border-left: 3px solid var(--green-500) !important;
+  }
 }
+

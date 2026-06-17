@@ -14,7 +14,6 @@
   .projects-grid{grid-template-columns:repeat(2,1fr)}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .testimonials-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr}
   .method-features{grid-template-columns:repeat(2,1fr)}
   .daily-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -42,7 +41,6 @@
   .form-group.full{grid-column:1}
   .form-wrapper{padding:28px 20px}
   .nav-cta .btn-outline{display:none}
-  .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;text-align:center}
   .highlights-grid{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:repeat(2,1fr)}

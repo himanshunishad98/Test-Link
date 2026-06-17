@@ -8,7 +8,7 @@ SkillNest (also known as Smart Digital Skills) is a premier practical, project-b
 - **Founder & lead Educator:** Aanandita Uplopwar
 - **Headquarters Location:** Durg / Bhilai Nagar, Chhattisgarh, India
 - **Contact Email:** admin@skillnest.co.in
-- **Contact Phone:** +91 88277 31006
+- **Contact Phone:** +91 74705 54811
 - **Website URL:** https://skillnest.co.in
 - **Social Media:** [Facebook](https://facebook.com/skillnest.co.in) | [Instagram](https://instagram.com/skillnest.co.in)
 

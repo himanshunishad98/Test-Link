@@ -3,9 +3,11 @@
    FOOTER
    ============================================================ */
 .footer{background:var(--gray-900);padding:56px 0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+.footer-grid{display:flex;flex-wrap:wrap;gap:36px 24px;margin-bottom:40px}
+.footer-brand{flex:2 1 280px;min-width:240px}
 .footer-brand h3{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:8px}
 .footer-brand p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px}
+.footer-col{flex:1 1 180px;min-width:150px}
 .social-links{display:flex;gap:10px}
 .social-link{width:36px;height:36px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .2s;color:rgba(255,255,255,.7)}
 .social-link:hover{background:var(--blue-600);color:var(--white)}
@@ -17,6 +19,21 @@
 .footer-divider{border-color:rgba(255,255,255,.08);margin:0 0 22px}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.35)}
+
+/* ============================================================
+   FOOTER PROGRAM LINKS
+   ============================================================ */
+.footer-program-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.footer-program-links h4{font-size:.88rem;font-weight:800;color:var(--white);text-transform:uppercase;letter-spacing:.08em;margin-bottom:0}
+.footer-program-links ul{display:flex;flex-wrap:wrap;gap:24px;list-style:none;margin:0;padding:0}
+.footer-program-links ul li{margin-bottom:0}
+.footer-program-links ul li a{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s;display:flex;align-items:center;gap:8px}
+.footer-program-links ul li a:hover{color:var(--white)}
+
+@media(max-width:768px){
+  .footer-program-links{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:24px}
+  .footer-program-links ul{gap:12px 18px}
+}
 
 /* ============================================================
    FLOATING WHATSAPP

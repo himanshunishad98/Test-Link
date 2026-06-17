@@ -35,7 +35,7 @@ Each lead submission writes a document with the following schema:
 
 ## 3. WhatsApp Redirect API
 When a parent confirms their booking, the website redirect triggers a WhatsApp API path:
-- **Base URL:** `https://wa.me/918827731006`
+- **Base URL:** `https://wa.me/917470554811`
 - **Pre-filled Message parameter:**
   `text=Hello%20SkillNest%2C%20I%20have%20booked%20a%20free%20demo%20for%20my%20child%20named%20%5BName%5D.`
 - **Result:** Launches parent's WhatsApp app with a direct thread to founder Aanandita Uplopwar.

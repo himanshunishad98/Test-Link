@@ -127,7 +127,7 @@ function setHTML(id, value) {
       } else if (key === 'whatsapp') {
         el.href = `https://wa.me/${config.WHATSAPP}?text=Hi%2C%20I%20want%20details%20about%20Smart%20Digital%20Skills%20Program.`;
       } else if (key === 'email') {
-        el.href = `mailto:${config.EMAIL}`;
+        el.href = `mailto:${config.EMAIL}?subject=Digital%20Learning%20Program%20Inquiry&body=I%20want%20details%20about%20digital%20learning%20program.`;
       }
     });
 
@@ -138,9 +138,20 @@ function setHTML(id, value) {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       let descContent = metaDesc.getAttribute('content') || '';
+      
+      const legacyNums = (config.LEGACY_PHONES || ["8827731006", "7987605097"]).concat([config.PHONE]);
+      const legacyRegexParts = legacyNums.map(num => {
+        const digits = num.replace(/\D/g, '').slice(-10);
+        if (digits.length === 10) {
+          return `(?:\\+91[ -]?)?${digits.slice(0, 5)}[ -]?${digits.slice(5)}`;
+        }
+        return num.replace(/\+/g, '\\+');
+      });
+      const phoneRegex = new RegExp(legacyRegexParts.join('|'), 'g');
+
       descContent = descContent
         .replace(new RegExp(originalBrand, 'g'), config.BRAND_NAME)
-        .replace(/\+91-8827731006/g, config.PHONE)
+        .replace(phoneRegex, config.PHONE)
         .replace(/₹3,499/g, config.CURRENT_PRICE)
         .replace(/₹3,000/g, config.CURRENT_PRICE);
       metaDesc.setAttribute('content', descContent);

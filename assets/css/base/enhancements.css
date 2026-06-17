@@ -211,6 +211,7 @@ article:hover{transform:translateY(-5px)!important}
   z-index: 10005;
   color: #ffffff;
   animation:slideInUp3D .4s cubic-bezier(.34,1.56,.64,1);
+  transition: bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 @keyframes slideInUp3D{from{opacity:0;transform:translateY(48px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 
@@ -281,6 +282,18 @@ article:hover{transform:translateY(-5px)!important}
 /* Sticky CTA slide */
 .sticky-cta-strip{transform:translateY(100%);transition:transform .45s cubic-bezier(.22,1,.36,1)}
 .sticky-cta-strip.visible{transform:translateY(0)}
+
+/* Shift the scroll popup up when the bottom sticky CTA strip is visible to prevent overlap */
+body:has(#sds-sticky-strip.visible) .scroll-cta-popup,
+body:has(.sticky-cta-strip.visible) .scroll-cta-popup {
+  bottom: 96px;
+}
+@media (max-width: 768px) {
+  body:has(#sds-sticky-strip.visible) .scroll-cta-popup,
+  body:has(.sticky-cta-strip.visible) .scroll-cta-popup {
+    bottom: 110px;
+  }
+}
 
 /* ============================================================
    MOBILE — disable heavy effects, preserve basic transitions

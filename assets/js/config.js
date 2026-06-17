@@ -16,6 +16,9 @@ const SITE_CONFIG = {
   WHATSAPP: "917470554811",
   WHATSAPP_LINK: "https://wa.me/917470554811",
 
+  // Legacy phone numbers to scan and clean up from the site
+  LEGACY_PHONES: ["8827731006", "7987605097"],
+
   EMAIL: "admin@skillnest.co.in",
   ADDRESS: "Durg, Chhattisgarh, India",
   CITY: "Bhilai Nagar",
@@ -67,6 +70,7 @@ const configMonthDays = MONTH_DAYS_MAP[configMonthLower] || 30;
 var CONFIG = {
   phone: SITE_CONFIG.WHATSAPP,
   phoneDisplay: SITE_CONFIG.PHONE,
+  legacyPhones: SITE_CONFIG.LEGACY_PHONES,
   email: SITE_CONFIG.EMAIL,
   location: `${SITE_CONFIG.ADDRESS}, ${SITE_CONFIG.CITY}, ${SITE_CONFIG.STATE}, ${SITE_CONFIG.COUNTRY}`,
   hours: SITE_CONFIG.WORKING_HOURS,

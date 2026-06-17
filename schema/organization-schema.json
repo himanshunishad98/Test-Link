@@ -14,7 +14,7 @@
     "url": "https://skillnest.co.in/skillnest-poster.jpg"
   },
   "email": "support@skillnest.co.in",
-  "telephone": "+91 88277 31006",
+  "telephone": "+91 74705 54811",
   "areaServed": "India",
   "priceRange": "₹₹",
   "address": {
@@ -25,8 +25,8 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "21.1904",
-    "longitude": "81.2849"
+    "latitude": 21.1904,
+    "longitude": 81.2849
   },
   "founder": {
     "@type": "Person",
